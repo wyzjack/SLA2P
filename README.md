@@ -22,11 +22,11 @@ We propose a novel and powerful framework, dubbed as SLA$^2$P, for unsupervised 
 ## TODO
 Code will be released soon! Stay tuned!
 
-## BibTeX
+<!-- ## BibTeX
 
     @article{wang2021sla,
         title={SLA $\^{} 2$ P: Self-supervised Anomaly Detection with Adversarial Perturbation},
         author={Wang, Yizhou and Qin, Can and Wei, Rongzhe and Xu, Yi and Bai, Yue and Fu, Yun},
         journal={arXiv preprint arXiv:2111.12896},
         year={2021}
-    }
+    } -->
