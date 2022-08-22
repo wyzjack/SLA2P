@@ -7,7 +7,7 @@
     <a><img src="images/purdue.png"  height="70px" ></a>
 </div>
 
-[arXiv](https://arxiv.org/abs/2111.12896) | Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
+Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
 
 <div align="center">
   <img src="images/framework.png" width="850px" height="250px">
