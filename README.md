@@ -1,4 +1,4 @@
-# SLA$^2$P: Self-supervised Anomaly Detection with Adversarial Perturbation （CIKM 2022）
+# Self-supervision Meets Adversarial Perturbation: A Novel Framework for Anomaly Detection （CIKM 2022）
 
 
 <div align="left">
