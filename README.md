@@ -4,7 +4,7 @@
 <div align="left">
     <a><img src="images/smile.png"  height="70px" ></a>
     <a><img src="images/neu.png"  height="70px" ></a>
-    <a><img src="images/purdue.png"  height="70px" ></a>
+    <a><img src="images/purdue_smaller.png"  height="70px" ></a>
 </div>
 
 Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
