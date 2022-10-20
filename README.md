@@ -69,7 +69,7 @@ To evalute Unsupervised Anomaly Detection performance, use `evaluate_roc_auc.py`
 
 
 ## Acknowledgments
-In this code we heavily rely on the [code of E3Outlier](https://github.com/demonzyj56/E3Outlier). The README file format is heavily based on the GitHub repos of my senior colleague [Huan Wang](https://github.com/MingSun-Tse). Great thanks to them! We also greatly thank the anounymous CIKM'22 reviewers for the constructive comments to help us improve the paper. 
+In this code we heavily rely on the [code of E3Outlier](https://github.com/demonzyj56/E3Outlier). The README file format is heavily based on the GitHub repos of my senior colleague [Huan Wang](https://github.com/MingSun-Tse) and [Xu Ma](https://github.com/ma-xu). Great thanks to them! We also greatly thank the anounymous CIKM'22 reviewers for the constructive comments to help us improve the paper. 
 
 
 ## BibTeX
