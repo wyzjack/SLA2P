@@ -64,12 +64,12 @@ python sla2p.py --dataset kdd --n_rots 64 --d_out 128 --acc_thres 0.6 --epsilon 
 
 ``` 
 
-To evalute Unsupervised Anomaly Detection performance, use `evaluate_roc_auc.py` for AUROC scores and `evaluate_pr_auc.py` for AUPR scores.
+To evaluate Unsupervised Anomaly Detection performance, use `evaluate_roc_auc.py` for AUROC scores and `evaluate_pr_auc.py` for AUPR scores.
 
 
 
 ## Acknowledgments
-In this code we heavily rely on the [code of E3Outlier](https://github.com/demonzyj56/E3Outlier). The README file format is heavily based on the GitHub repos of my senior colleague [Huan Wang](https://github.com/MingSun-Tse) and [Xu Ma](https://github.com/ma-xu). Great thanks to them! We also greatly thank the anounymous CIKM'22 reviewers for the constructive comments to help us improve the paper. 
+In this code we heavily rely on the [code of E3Outlier](https://github.com/demonzyj56/E3Outlier). The README file format is heavily based on the GitHub repos of my senior colleague [Huan Wang](https://github.com/MingSun-Tse) and [Xu Ma](https://github.com/ma-xu). Great thanks to them! We also greatly thank the anonymous CIKM'22 reviewers for the constructive comments to help us improve the paper. 
 
 
 ## BibTeX
