@@ -120,43 +120,7 @@ def load_20news_bert_with_outliers(class_ind, p):
 
     return X_test, y_test
 
-def load_reuters_gpt3_with_outliers(class_ind, p):
-    with h5py.File("reuters_gpt3.data", 'r') as f:
-        X_origin = f['embeddings'][:]
-        y_origin = f['y'][:]
 
-    y_test = (np.array(y_origin) == class_ind).astype(int)
-
-    num_anomaly = int(360 * p)
-
-    X_normal = X_origin[y_test == 1]
-    X_anomaly = X_origin[y_test == 0][0:num_anomaly]
-    X_test = np.concatenate((X_normal, X_anomaly))
-
-    y_test = np.array([1] * len(X_normal) + [0] * num_anomaly)
-    # print(X_test.shape)
-    # print(y_test.shape)
-
-    return X_test, y_test
-
-def load_reuters_bert_with_outliers(class_ind, p):
-    with h5py.File("reuters_bert.data", 'r') as f:
-        X_origin = f['embeddings'][:]
-        y_origin = f['y'][:]
-
-    y_test = (np.array(y_origin) == class_ind).astype(int)
-
-    num_anomaly = int(360 * p)
-
-    X_normal = X_origin[y_test == 1]
-    X_anomaly = X_origin[y_test == 0][0:num_anomaly]
-    X_test = np.concatenate((X_normal, X_anomaly))
-
-    y_test = np.array([1] * len(X_normal) + [0] * num_anomaly)
-    # print(X_test.shape)
-    # print(y_test.shape)
-
-    return X_test, y_test
 
 def load_reuters_with_outliers(class_ind, p):
     with open("./data/reuters.data", 'rb') as f:

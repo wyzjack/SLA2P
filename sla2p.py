@@ -5,7 +5,7 @@ from multiprocessing import Manager
 import numpy as np
 import types
 from utils import save_roc_pr_curve_data, get_class_name_from_index
-from outlier_datasets import load_cifar10_with_outliers, load_cifar100_with_outliers,load_20news_with_outliers, load_reuters_with_outliers, load_caltech_with_outliers, load_20news_gpt3_with_outliers, load_reuters_gpt3_with_outliers, load_20news_bert_with_outliers, load_reuters_bert_with_outliers
+from outlier_datasets import load_cifar10_with_outliers, load_cifar100_with_outliers,load_20news_with_outliers, load_reuters_with_outliers, load_caltech_with_outliers, load_20news_gpt3_with_outliers, load_20news_bert_with_outliers
 from models.fcn_pytorch import fcn
 from keras2pytorch_dataset import trainset_pytorch, testset_pytorch
 import torch.utils.data as data
@@ -32,7 +32,7 @@ parser.add_argument('--n_run', type=int, default= 5)
 parser.add_argument('--d_out', type=int, default= 256)
 parser.add_argument('--acc_thres', type=float, default= 0.6)
 parser.add_argument('--dataset', type=str, default='cifar10',
-                    choices=['cifar10', 'cifar100', 'caltech', 'reuters', '20news', 'arrhythmia', 'arrhythmia_gpt3', 'arrhythmia_bert', 'kdd', '20news_gpt3', 'reuters_gpt3', '20news_bert', 'reuters_bert'],
+                    choices=['cifar10', 'cifar100', 'caltech', 'reuters', '20news', 'arrhythmia', 'arrhythmia_gpt3', 'arrhythmia_bert', 'kdd', '20news_gpt3', '20news_bert'],
                     help='dataset name for UAD')
 parser.add_argument('--extract_model', type=str, default='res50',
                     choices=['res50', 'res101'],
@@ -190,7 +190,7 @@ def sla2p_experiment(args, x_train, y_train, dataset_name, single_class_ind, gpu
                     x_train_task[batch_idx*batch_size_extract: (batch_idx+1)*batch_size_extract] = out.cpu().data.numpy()
         for i in range(x_train_task.shape[0]):
             x_train_task[i] = (x_train_task[i] / np.linalg.norm(x_train_task[i]))
-    elif dataset_name in ['reuters', '20news', '20news_gpt3', 'reuters_gpt3', '20news_bert', 'reuters_bert']:
+    elif dataset_name in ['reuters', '20news', '20news_gpt3', '20news_bert']:
         epochs=1000000
         x_train_task = x_train
     elif dataset_name in ['kdd', 'arrhythmia', 'arrhythmia_gpt3', 'arrhythmia_bert']:
@@ -288,7 +288,7 @@ if __name__ == '__main__':
     for g in range(N_GPUS):
         q.put(str(g))
 
-    if args.dataset in ['cifar10', 'cifar100', 'caltech', 'reuters', '20news', '20news_gpt3', 'reuters_gpt3', '20news_bert', 'reuters_bert']:
+    if args.dataset in ['cifar10', 'cifar100', 'caltech', 'reuters', '20news', '20news_gpt3', '20news_bert']:
         if args.dataset == 'cifar10':
             data_load_fn = load_cifar10_with_outliers
             n_classes = 10
@@ -307,15 +307,9 @@ if __name__ == '__main__':
         elif args.dataset == '20news_gpt3':
             data_load_fn = load_20news_gpt3_with_outliers
             n_classes = 20
-        elif args.dataset == 'reuters_gpt3':
-            data_load_fn = load_reuters_gpt3_with_outliers
-            n_classes = 5
         elif args.dataset == '20news_bert':
             data_load_fn = load_20news_bert_with_outliers
             n_classes = 20
-        elif args.dataset == 'reuters_bert':
-            data_load_fn = load_reuters_bert_with_outliers
-            n_classes = 5
         
         p_list = [0.1, 0.3, 0.5]
         for p in p_list:
@@ -325,7 +319,7 @@ if __name__ == '__main__':
 
             algo_name = 'sla2p-outlier_' + str(p)
             n_classes = {
-                'cifar10': 10, 'mnist': 10, 'cifar100': 20, 'fashion-mnist': 10, 'svhn': 10, '20news': 20, 'reuters': 5, 'caltech': 11, '20news_gpt3': 20, 'reuters_gpt3': 5, '20news_bert': 20, 'reuters_bert': 5
+                'cifar10': 10, 'mnist': 10, 'cifar100': 20, 'fashion-mnist': 10, 'svhn': 10, '20news': 20, 'reuters': 5, 'caltech': 11, '20news_gpt3': 20, '20news_bert': 20
             }[args.dataset]
             compute_average_roc_auc_traintest(algo_name, RESULTS_DIR, args.dataset,
                                 n_classes, p)
