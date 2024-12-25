@@ -1,5 +1,5 @@
 # SLA²P: Self-supervised Anomaly Detection with Adversarial Perturbation (TKDE 2024).
-## Short version: Self-supervision Meets Adversarial Perturbation: A Novel Framework for Anomaly Detection （CIKM 2022）[[paper](https://dl.acm.org/doi/pdf/10.1145/3511808.3557697)][[code branch](https://github.com/wyzjack/SLA2P/tree/CIKM-2022)]
+
 
 
 <div align="left">
@@ -13,6 +13,8 @@
 <div align="center">
   <img src="images/framework.png" width="850px" height="250px">
 </div>
+
+## Short version: Self-supervision Meets Adversarial Perturbation: A Novel Framework for Anomaly Detection （CIKM 2022）[[paper](https://dl.acm.org/doi/pdf/10.1145/3511808.3557697)][[code branch](https://github.com/wyzjack/SLA2P/tree/CIKM-2022)]
 
 
 ## Abstract
