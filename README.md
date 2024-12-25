@@ -91,13 +91,13 @@ python sla2p.py --dataset kdd --n_rots 64 --d_out 128 --acc_thres 0.6 --epsilon 
 python sla2p.py --dataset 20news_bert --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000
 
 # 20 Newsgroups (GPT3)
-python sla2p.py --dataset 20news_gpt3 --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000 --gpt3
+python sla2p.py --dataset 20news_gpt3 --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000
 
 # Arrhythmia (BERT)
-python sla2p.py --dataset arrhythmia_bert --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000 --bert
+python sla2p.py --dataset arrhythmia_bert --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000
 
 # Arrhythmia (GPT3)
-python sla2p.py --dataset arrhythmia_gpt3 --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000 --gpt3
+python sla2p.py --dataset arrhythmia_gpt3 --n_rots 256 --d_out 256 --acc_thres 0.6 --epsilon 1000
 
 ``` 
 
