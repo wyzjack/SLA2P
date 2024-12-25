@@ -22,6 +22,13 @@ Anomaly detection is a foundational yet difficult problem in machine learning. I
 
 ## Usage
 
+#### Environment setup
+
+```bash
+conda env create -f env.yaml
+```
+
+
 #### Prepare data
 
 Download processed data (Caltech 101, 20 Newsgroups and Reuters) from [[Google Drive Link]](https://drive.google.com/drive/folders/11Bvi9x3dfDql5tov4NmEgVtLGQRFKPSy?usp=sharing) and put them into folder `/data`. They are borrowed from the [[official implementation of RSRAE]](https://github.com/dmzou/RSRAE) (Robust Subspace Recovery Layer for Unsupervised Anomaly Detection. ICLR 2020)
@@ -49,12 +56,6 @@ python extract_GPT3_embedding_arrhythmia.py
 the corresponding processed embeddings will be saved in `20news_gpt3.data` and `arrhythmia_gpt3.mat`. We also provide the processed embeddings at [20news_gpt3](https://www.dropbox.com/scl/fi/ug5krmptumot49bzgl05f/20news_gpt3.data?rlkey=ytt7x5zmqwsyo3psazi46f8yz&st=9xsqhj1v&dl=0) and [arrhythmia_gpt3](https://www.dropbox.com/scl/fi/km4dh9reg7ng6juk25afq/arrhythmia_gpt3.mat?rlkey=0d69jmh7kfxjcd2xhd5moghlr&st=34t4b2bj&dl=0).
 
 
-
-#### Environment setup
-
-```bash
-conda env create -f env.yaml
-```
 
 #### Run the experiments
 
