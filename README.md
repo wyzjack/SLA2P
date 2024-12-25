@@ -8,7 +8,7 @@
     <a><img src="images/purdue_smaller.png"  height="70px" ></a>
 </div>
 
- [PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10645289) | Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
+ [Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10645289) | Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
 
 <div align="center">
   <img src="images/framework.png" width="850px" height="250px">
