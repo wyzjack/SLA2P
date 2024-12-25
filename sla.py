@@ -282,7 +282,7 @@ if __name__ == '__main__':
         elif args.dataset == 'reuters':
             data_load_fn = load_reuters_with_outliers
             n_classes = 5
-        p_list = [0.1, 0.3, 0.5, 0.01, 0.02, 0.03, 0.04, 0.05]
+        p_list = [0.1, 0.3, 0.5]
         for i in range(args.n_run):
             for p in p_list:
                 run_experiments(data_load_fn, args.dataset, q, n_classes, p, i)

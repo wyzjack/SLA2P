@@ -1,7 +1,7 @@
 from glob import glob
 import numpy as np
 from sklearn.metrics import roc_curve, precision_recall_curve, auc
-from keras.datasets import cifar100, cifar10
+# from keras.datasets import cifar100, cifar10
 
 
 
@@ -72,8 +72,12 @@ def get_class_name_from_index(index, dataset_name):
                      'medium-sized mammals', 'non-insect invertebrates', 'people', 'reptiles', 'small mammals', 'trees',
                      'vehicles 1', 'vehicles 2'),
         '20news':('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'),
+        '20news_gpt3':('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'),
+        '20news_bert':('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'),
         'reuters': ('0', '1', '2', '3', '4'),
         'caltech': ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'),
+        'reuters_gpt3': ('0', '1', '2', '3', '4'),
+        'reuters_bert': ('0', '1', '2', '3', '4'),
     }
 
     return ind_to_name[dataset_name][index]

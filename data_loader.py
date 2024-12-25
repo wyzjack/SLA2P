@@ -58,6 +58,10 @@ class Data_Loader:
             return self.Thyroid_train_valid_data()
         if dataset_name == 'arrhythmia':
             return self.Arrhythmia_train_valid_data()
+        if dataset_name == 'arrhythmia_gpt3':
+            return self.Arrhythmia_gpt3_train_valid_data()
+        if dataset_name == 'arrhythmia_bert':
+            return self.Arrhythmia_bert_train_valid_data()
         if dataset_name == 'ckdd':
             return self.contaminatedKDD99_train_valid_data(c_percent)
 
@@ -103,10 +107,58 @@ class Data_Loader:
     def Arrhythmia_train_valid_data(self):
         data = scipy.io.loadmat("./data/arrhythmia.mat")
         samples = data['X']  # 518
+        print(samples.shape)
         labels = ((data['y']).astype(np.int32)).reshape(-1)
+        print(labels.shape)
 
         norm_samples = samples[labels == 0]  # 452 norm
         anom_samples = samples[labels == 1]  # 66 anom
+
+        x_train = np.concatenate((norm_samples, anom_samples))
+        y_train = np.array([1] * len(norm_samples) + [0] * len(anom_samples))
+
+        # n_train = len(norm_samples) // 2
+        # x_train = norm_samples[:n_train]  # 226 train
+        #
+        # val_real = norm_samples[n_train:]
+        # val_fake = anom_samples
+        # return self.norm_data(x_train, val_real, val_fake)
+        return x_train, y_train
+
+    def Arrhythmia_gpt3_train_valid_data(self):
+        data = scipy.io.loadmat("./arrhythmia_gpt3.mat")
+        samples = data['embeddings']  # 518
+        # print(samples.shape)
+        labels = ((data['y']).astype(np.int32)).reshape(-1)
+        # print(labels.shape)
+
+        norm_samples = samples[labels == 0]  # 452 norm
+        # print(norm_samples.shape)
+        anom_samples = samples[labels == 1]  # 66 anom
+        # print(anom_samples.shape)
+
+        x_train = np.concatenate((norm_samples, anom_samples))
+        y_train = np.array([1] * len(norm_samples) + [0] * len(anom_samples))
+
+        # n_train = len(norm_samples) // 2
+        # x_train = norm_samples[:n_train]  # 226 train
+        #
+        # val_real = norm_samples[n_train:]
+        # val_fake = anom_samples
+        # return self.norm_data(x_train, val_real, val_fake)
+        return x_train, y_train
+
+    def Arrhythmia_bert_train_valid_data(self):
+        data = scipy.io.loadmat("./arrhythmia_bert.mat")
+        samples = data['X']  # 518
+        # print(samples.shape)
+        labels = ((data['y']).astype(np.int32)).reshape(-1)
+        # print(labels.shape)
+
+        norm_samples = samples[labels == 0]  # 452 norm
+        # print(norm_samples.shape)
+        anom_samples = samples[labels == 1]  # 66 anom
+        # print(anom_samples.shape)
 
         x_train = np.concatenate((norm_samples, anom_samples))
         y_train = np.array([1] * len(norm_samples) + [0] * len(anom_samples))

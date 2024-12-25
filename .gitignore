@@ -130,3 +130,7 @@ dmypy.json
 
 # SLA2P
 .DS_Store
+*.data
+results*
+*.h5
+*.mat
