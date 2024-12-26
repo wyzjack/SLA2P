@@ -5,7 +5,7 @@
 <div align="left">
     <a><img src="images/smile.png"  height="70px" ></a>
     <a><img src="images/neu.png"  height="70px" ></a>
-    <a><img src="images/purdue_smaller.png"  height="70px" ></a>
+    <a><img src="images/GeorgiaTech_RGB.png"  height="70px" ></a>
 </div>
 
  [Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10645289) | Primary contact: [Yizhou Wang](mailto:wyzjack990122@gmail.com)
